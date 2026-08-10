@@ -48,7 +48,7 @@ spendsense/
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/YOUR_USERNAME/spendsense.git
+git clone https://github.com/vaibhvee012/spendsense.git
 cd spendsense
 ```
 
