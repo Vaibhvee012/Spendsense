@@ -35,7 +35,7 @@ app.use('/api/analytics', analyticsRoutes);
 const goalRoutes = require('./routes/goalRoutes');
 app.use('/api/goals', goalRoutes);
 app.get('/', (req, res) => {
-  res.send('SpendWise API is running');
+  res.send('SpendSense API is running');
 });
 
 const PORT = process.env.PORT || 5000;
