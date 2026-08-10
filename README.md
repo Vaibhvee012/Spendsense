@@ -2,6 +2,17 @@
 
 Not just an expense tracker. SpendSense tracks your income and expenses, and surfaces real insights like *"Your Food spending increased 23% compared with last month."*
 
+🔗 **Live app:** [https://spendsense-zeta.vercel.app](https://spendsense-zeta.vercel.app)
+
+### Try it out
+```
+Email:    user2_test@example.com
+Password: 123456
+```
+Log in with the credentials above to explore a pre-populated dashboard, or sign up for your own account.
+
+> Note: the backend is hosted on Render's free tier, which spins down after periods of inactivity. The first request may take 30–50 seconds to wake up — subsequent requests will be fast.
+
 ## Features
 
 - 🔐 Authentication (JWT-based signup/login)
@@ -19,6 +30,7 @@ Not just an expense tracker. SpendSense tracks your income and expenses, and sur
 **Frontend:** React (Vite), Tailwind CSS v4, Framer Motion, Recharts, React Icons, Axios
 **Backend:** Node.js, Express, MongoDB (Mongoose)
 **Auth:** JWT, bcrypt
+**Deployment:** Vercel (frontend), Render (backend), MongoDB Atlas (database)
 
 ## Project Structure
 
@@ -28,7 +40,7 @@ spendsense/
 └── server/     # Express backend + MongoDB
 ```
 
-## Getting Started
+## Running Locally
 
 ### Prerequisites
 - Node.js (v18+)
@@ -64,6 +76,14 @@ Open a new terminal:
 ```bash
 cd client
 npm install
+```
+
+Create a `.env` file in `client/`:
+```
+VITE_API_URL=http://localhost:5000/api
+```
+
+```bash
 npm run dev
 ```
 Frontend runs on `http://localhost:5173`.
@@ -74,6 +94,12 @@ cd server
 node seed.js
 ```
 This creates a test account (`test@example.com` / `123456`) with sample categories and transactions.
+
+## Deployment
+
+- **Frontend:** deployed on [Vercel](https://vercel.com), root directory `client`, with `VITE_API_URL` pointing to the live backend
+- **Backend:** deployed on [Render](https://render.com), root directory `server`, with `MONGODB_URI`, `JWT_SECRET`, and `CLIENT_URL` set as environment variables
+- **Database:** [MongoDB Atlas](https://www.mongodb.com/cloud/atlas), with network access opened to allow connections from Render
 
 ## License
 
